@@ -1,5 +1,6 @@
 const button = document.querySelector('.add_todo')
 const list = document.querySelector('#toDo_list')
+let counter = 0
 
 
 button.textContent = "Добавить"
@@ -15,9 +16,11 @@ function addTodo(todo) {
     const newElem = document.createElement('div');
     newElem.textContent = todo;
     list.appendChild(newElem);
+    
+    counter++
     let deleteBtn = document.createElement('button');
     deleteBtn.textContent = "Удалить";
-    deleteBtn.setAttribute('class', `${todo}`)
+    deleteBtn.setAttribute('class', `${counter}`)
     newElem.appendChild(deleteBtn)
 }
 
