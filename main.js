@@ -74,28 +74,41 @@
 //})
 ////НЕРЕАЛИЗОВАН ТАЙМЕР ИГРЫ
 
-const wrapperBlock = document.getElementById('wrapperBlock')
-const inputNode = document.querySelector('.output')
 
-window.onload = function(){
-    const alphabet = 'qwertyuiopasdfghjklzxcvbnm,.- ?!:;[]{}&'
-    let array = alphabet.split('').map(item => {
-if (item === '&') return ''
-        else return item
-    })
-    for(let i=0; i<39; i++) {
-    let square = document.createElement("div");
-    square.classList.add("square");
-    square.classList.add(`char_${i}`)
-    square.innerText =`${array[i]}`;
-    wrapperBlock.appendChild(square);
-  }
+////ЭКРАННАЯ КЛАВИАТУРА
+//const wrapperBlock = document.getElementById('wrapperBlock')
+//const inputNode = document.querySelector('.output')
+////ЗАПОЛНЯЕМ РОД. БЛОК ДОЧЕРНИМИ КНОПКАМИ С БУКВАМИ
+//window.onload = function(){
+//    const alphabet = 'qwertyuiopasdfghjklzxcvbnm,.- ?!:;[]{}&'
+//    let array = alphabet.split('').map(item => {
+//if (item === '&') return ''
+//        else return item
+//    })
+//    for(let i=0; i<39; i++) {
+//    let square = document.createElement("div");
+//    square.classList.add("square");
+//    square.classList.add(`char_${i}`)
+//    square.innerText =`${array[i]}`;
+//    wrapperBlock.appendChild(square);
+//  }
+//}
+////СЛУШАТЕЛЬ СОБЫТИЯ ПЕЧАТАЮЩИЙ ВВОД В ДИВЕ АУТПУТ
+//wrapperBlock.addEventListener('click', event => {
+//console.log(event.target.textContent)
+//    if (event.target.textContent == '') inputNode.style.textTransform = 'uppercase'
+//    inputNode.textContent += event.target.textContent
+//})
+
+const month = document.querySelector('.month')
+
+window.onload = function() {
+for (let i = 1; i < 32; i++) {
+    let day = document.createElement('li')
+    day.classList.add(`day${i}`)
+    day.textContent = `${i}`
+    month.appendChild(day)
+}
 }
 
-wrapperBlock.addEventListener('click', event => {
-console.log(event.target.textContent)
-    if (event.target.textContent == '') inputNode.style.textTransform = 'uppercase'
-    inputNode.textContent += event.target.textContent
-    
-    
-})
+month.style.display = 'inline-flex'
