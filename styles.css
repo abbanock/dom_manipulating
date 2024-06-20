@@ -8,18 +8,25 @@ body{
   padding: 0;
   display: flex;
   flex-flow: row wrap;
-  width: calc(100vmin - 10px);
-  height: calc(100vmin - 10px);
+  width: calc(130vmin - 13px);
+  height: calc(51vmin - 10px);
   border: 2px solid #333;
 }
+
 .square{
   margin: 0;
   padding: 0;
   width: calc(10vmin - 1px);
-  height: calc(10vmin - 1px);
+  height: calc(17vmin - 3px);
   border: 1px solid #aaa;
   background-color: #eee;
   box-sizing: border-box;
+display: flex;
+text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    line-height: calc(17vmin - 3px);
+    cursor: pointer;
 }
 
 .red {

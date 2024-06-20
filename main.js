@@ -37,38 +37,65 @@
 //    if (userInput.value == number) outputNode.textContent = 'Верно!!!!'
 //})
 
-const wrapperBlock = document.getElementById("wrapperBlock");
+////ДОСТАЕМ РОДИТЕЛЬСКИЙ БЛОК
+//const wrapperBlock = document.getElementById("wrapperBlock");
+////ПОЛУЧАЕМ МАССИВ РАНДОМНЫХ ЯЧЕЕК
+//function getRandCell() {
+//    let cellsArr = []
+//    for(let i = 0; i < 3; i++) {
+//        cellsArr.push(Math.floor(Math.random() * 100))
+//    }
+//    return cellsArr.map(item => `number${item}`)
+//}
+////ЗАПОЛНЯЕМ РОДИТЕЛЬСКИЙ БЛОК СТА ДОЧЕРНИМИ ЯЧЕЙКАМИ
+//window.onload = function(){
+//  for(let i=1; i<=100; i++){
+//    let square = document.createElement("div");
+//    square.classList.add("square");
+//      square.classList.add(`number${i}`)
+//    square.innerText =" ";
+//    
+//    wrapperBlock.appendChild(square);
+//  }  
+//}
+////СОХРАНЯЕМ В ПЕРЕМЕННУЮ МАССИВ ЯЧЕЕК И ОБЬЯВЛЯЕМ СЧЕТЧИК ПРАВИЛЬНЫХ ОТВЕТОВ
+//let cells = getRandCell()
+//let counter = 0
+////ДОБАВЛЯЕМ СЛУШАТЕЛЬ, ВНУТРИ ПРОВЕРЯЕМ ЯЧЕЙКУ НА НАЛИЧИЕ КЛАССА, В ЗАВИСМОСТИ ОТ ЭТОГО ДОБАВЛЯЕМ КЛАСС
+//wrapperBlock.addEventListener('click', event => {
+//    console.log(event.target.classList)
+//    console.log(cells)
+//    for(let i = 0; i < cells.length; i++ ) {
+//        if (event.target.classList.contains(`${cells[i]}`)) {
+//            event.target.classList.add('green')
+//            counter++
+//        } else event.target.classList.add('red')
+//    }
+//})
+////НЕРЕАЛИЗОВАН ТАЙМЕР ИГРЫ
 
-function getRandCell() {
-    let cellsArr = []
-    for(let i = 0; i < 3; i++) {
-        cellsArr.push(Math.floor(Math.random() * 100))
-    }
-    return cellsArr.map(item => `number${item}`)
-}
+const wrapperBlock = document.getElementById('wrapperBlock')
+const inputNode = document.querySelector('.output')
 
 window.onload = function(){
-  for(let i=1; i<=100; i++){
+    const alphabet = 'qwertyuiopasdfghjklzxcvbnm,.- ?!:;[]{}&'
+    let array = alphabet.split('').map(item => {
+if (item === '&') return ''
+        else return item
+    })
+    for(let i=0; i<39; i++) {
     let square = document.createElement("div");
     square.classList.add("square");
-      square.classList.add(`number${i}`)
-    square.innerText =" ";
-    
+    square.classList.add(`char_${i}`)
+    square.innerText =`${array[i]}`;
     wrapperBlock.appendChild(square);
-  }  
+  }
 }
 
-console.log(getRandCell().length)
-let cells = getRandCell()
-
 wrapperBlock.addEventListener('click', event => {
-    console.log(event.target.classList)
-    console.log(cells)
-    for(let i = 0; i < cells.length; i++ ) {
-        if (event.target.classList.contains(`${cells[i]}`)) {
-            event.target.classList.add('green')
-        } else event.target.classList.add('red')
-    }
+console.log(event.target.textContent)
+    if (event.target.textContent == '') inputNode.style.textTransform = 'uppercase'
+    inputNode.textContent += event.target.textContent
+    
+    
 })
-
-
