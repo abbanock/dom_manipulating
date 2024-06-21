@@ -130,3 +130,26 @@
 //    if (userInput.value == '') output.textContent = 'Вы ничего не ввели' 
 //    else output.textContent = tags[userInput.value]
 //})
+
+const events = {
+    '2022': {
+        'СВО': '24 февраля Россия вероломно напала на УКраину.',
+        'Смерть Елизаветы': '8 сентября на 97 году жизни скончалась королева Велткобритании ЕлизаветаII',
+        'Маск и Твиттер': 'В конце октября американский миллиардер Илон Маск закрыл сделку по приобретению Twitter, заплатив за нее 44 иллиарда долларов'
+    },
+    '2021': {
+        'Реальный срок Навальному': 'Суд согласился с доводами ФСИН и заменил Навальному условный срок на реальные 2 года'
+    }
+}
+
+const inputNode = document.getElementById('input')
+const table = document.getElementById('table')
+
+inputNode.addEventListener('keydown', event => {
+    if (event.key === 'enter' && inputNode.value !== '2022') {
+        const eventKey = document.createElement('td')
+        const eventDescr = document.createElement('td')
+        eventKey.textContent = events[2022]['СВО']
+        table.appendChild(eventKey)
+    }
+})
