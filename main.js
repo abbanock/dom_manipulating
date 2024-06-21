@@ -100,15 +100,35 @@
 //    inputNode.textContent += event.target.textContent
 //})
 
-const month = document.querySelector('.month')
 
-window.onload = function() {
-for (let i = 1; i < 32; i++) {
-    let day = document.createElement('li')
-    day.classList.add(`day${i}`)
-    day.textContent = `${i}`
-    month.appendChild(day)
-}
+//РЕАЛИЗАЦИЯ КАКОГО_ТО ВСРАТОГО КАЛЕНДАРЯ, ТЗ НЕ ПОНЯЛ. ТАК ЧТО МОЖНО ЗАБИТЬ БОЛТ
+//const month = document.querySelector('.month')
+//
+//window.onload = function() {
+//for (let i = 1; i < 32; i++) {
+//    let day = document.createElement('li')
+//    day.classList.add(`day${i}`)
+//    day.textContent = `${i}`
+//    month.appendChild(day)
+//}
+//}
+
+const userInput = document.querySelector('.search')
+const btn = document.querySelector('.button')
+const output = document.querySelector('.result')
+
+const tags = {
+    html: 'Указывает программе просмотра страниц, что это HTML документ.',
+    head: 'Определяет место, где помещается различная информация не отображаемая в теле документа. Здесь располагается тег названия документа и теги для поисковых машин.',
+    body: 'Определяет видимую часть документа',
+    title: 'Помещает название документа в оглавление программы просмотра страниц',
 }
 
-month.style.display = 'inline-flex'
+let tagsKeys = Object.keys(tags)
+
+btn.addEventListener('click', event => {
+    if (userInput.value == '') output.textContent = 'Вы ничего не ввели' 
+    else output.textContent = tags[userInput.value]
+})
+
+console.log(tags.html)
