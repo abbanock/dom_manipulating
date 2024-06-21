@@ -113,22 +113,20 @@
 //}
 //}
 
-const userInput = document.querySelector('.search')
-const btn = document.querySelector('.button')
-const output = document.querySelector('.result')
-
-const tags = {
-    html: 'Указывает программе просмотра страниц, что это HTML документ.',
-    head: 'Определяет место, где помещается различная информация не отображаемая в теле документа. Здесь располагается тег названия документа и теги для поисковых машин.',
-    body: 'Определяет видимую часть документа',
-    title: 'Помещает название документа в оглавление программы просмотра страниц',
-}
-
-let tagsKeys = Object.keys(tags)
-
-btn.addEventListener('click', event => {
-    if (userInput.value == '') output.textContent = 'Вы ничего не ввели' 
-    else output.textContent = tags[userInput.value]
-})
-
-console.log(tags.html)
+//ПОСКОВИК ПО ТЕГАМ
+//const userInput = document.querySelector('.search')
+//const btn = document.querySelector('.button')
+//const output = document.querySelector('.result')
+//ОБЬЕКТ ДЛЯ ХРАНЕНИЯ ОПИСАНИЙ ТЕГОВ
+//const tags = {
+//    html: 'Указывает программе просмотра страниц, что это HTML документ.',
+//    head: 'Определяет место, где помещается различная информация не отображаемая в теле документа. Здесь располагается тег названия документа и теги для поисковых машин.',
+//    body: 'Определяет видимую часть документа',
+//    title: 'Помещает название документа в оглавление программы просмотра страниц',
+//}
+//
+////ОБРАБОТЧИК СОБЫТИЯ ВЫВОДЯЩИЙ ОПИСАНИЕ ТЕГА
+//btn.addEventListener('click', event => {
+//    if (userInput.value == '') output.textContent = 'Вы ничего не ввели' 
+//    else output.textContent = tags[userInput.value]
+//})
