@@ -37,41 +37,41 @@
 //    if (userInput.value == number) outputNode.textContent = 'Верно!!!!'
 //})
 
-////ДОСТАЕМ РОДИТЕЛЬСКИЙ БЛОК
-//const wrapperBlock = document.getElementById("wrapperBlock");
-////ПОЛУЧАЕМ МАССИВ РАНДОМНЫХ ЯЧЕЕК
-//function getRandCell() {
-//    let cellsArr = []
-//    for(let i = 0; i < 3; i++) {
-//        cellsArr.push(Math.floor(Math.random() * 100))
-//    }
-//    return cellsArr.map(item => `number${item}`)
-//}
-////ЗАПОЛНЯЕМ РОДИТЕЛЬСКИЙ БЛОК СТА ДОЧЕРНИМИ ЯЧЕЙКАМИ
-//window.onload = function(){
-//  for(let i=1; i<=100; i++){
-//    let square = document.createElement("div");
-//    square.classList.add("square");
-//      square.classList.add(`number${i}`)
-//    square.innerText =" ";
-//    
-//    wrapperBlock.appendChild(square);
-//  }  
-//}
-////СОХРАНЯЕМ В ПЕРЕМЕННУЮ МАССИВ ЯЧЕЕК И ОБЬЯВЛЯЕМ СЧЕТЧИК ПРАВИЛЬНЫХ ОТВЕТОВ
-//let cells = getRandCell()
-//let counter = 0
-////ДОБАВЛЯЕМ СЛУШАТЕЛЬ, ВНУТРИ ПРОВЕРЯЕМ ЯЧЕЙКУ НА НАЛИЧИЕ КЛАССА, В ЗАВИСМОСТИ ОТ ЭТОГО ДОБАВЛЯЕМ КЛАСС
-//wrapperBlock.addEventListener('click', event => {
-//    console.log(event.target.classList)
-//    console.log(cells)
-//    for(let i = 0; i < cells.length; i++ ) {
-//        if (event.target.classList.contains(`${cells[i]}`)) {
-//            event.target.classList.add('green')
-//            counter++
-//        } else event.target.classList.add('red')
-//    }
-//})
+//ДОСТАЕМ РОДИТЕЛЬСКИЙ БЛОК
+const wrapperBlock = document.getElementById("wrapperBlock");
+//ПОЛУЧАЕМ МАССИВ РАНДОМНЫХ ЯЧЕЕК
+function getRandCell() {
+    let cellsArr = []
+    for(let i = 0; i < 3; i++) {
+        cellsArr.push(Math.floor(Math.random() * 100))
+    }
+    return cellsArr.map(item => `number${item}`)
+}
+//ЗАПОЛНЯЕМ РОДИТЕЛЬСКИЙ БЛОК СТА ДОЧЕРНИМИ ЯЧЕЙКАМИ
+window.onload = function(){
+  for(let i=1; i<=100; i++){
+    let square = document.createElement("div");
+    square.classList.add("square");
+      square.classList.add(`number${i}`)
+    square.innerText =" ";
+    
+    wrapperBlock.appendChild(square);
+  }  
+}
+//СОХРАНЯЕМ В ПЕРЕМЕННУЮ МАССИВ ЯЧЕЕК И ОБЬЯВЛЯЕМ СЧЕТЧИК ПРАВИЛЬНЫХ ОТВЕТОВ
+let cells = getRandCell()
+let counter = 0
+//ДОБАВЛЯЕМ СЛУШАТЕЛЬ, ВНУТРИ ПРОВЕРЯЕМ ЯЧЕЙКУ НА НАЛИЧИЕ КЛАССА, В ЗАВИСМОСТИ ОТ ЭТОГО ДОБАВЛЯЕМ КЛАСС
+wrapperBlock.addEventListener('click', event => {
+    console.log(event.target.classList)
+    console.log(cells)
+    for(let i = 0; i < cells.length; i++ ) {
+        if (event.target.classList.contains(`${cells[i]}`)) {
+            event.target.classList.add('green')
+            counter++
+        } else event.target.classList.add('red')
+    }
+})
 ////НЕРЕАЛИЗОВАН ТАЙМЕР ИГРЫ
 
 
@@ -131,25 +131,25 @@
 //    else output.textContent = tags[userInput.value]
 //})
 
-const events = {
-    '2022': {
-        'СВО': '24 февраля Россия вероломно напала на УКраину.',
-        'Смерть Елизаветы': '8 сентября на 97 году жизни скончалась королева Велткобритании ЕлизаветаII',
-        'Маск и Твиттер': 'В конце октября американский миллиардер Илон Маск закрыл сделку по приобретению Twitter, заплатив за нее 44 иллиарда долларов'
-    },
-    '2021': {
-        'Реальный срок Навальному': 'Суд согласился с доводами ФСИН и заменил Навальному условный срок на реальные 2 года'
-    }
-}
-
-const inputNode = document.getElementById('input')
-const table = document.getElementById('table')
-
-inputNode.addEventListener('keydown', event => {
-    if (event.key === 'enter' && inputNode.value !== '2022') {
-        const eventKey = document.createElement('td')
-        const eventDescr = document.createElement('td')
-        eventKey.textContent = events[2022]['СВО']
-        table.appendChild(eventKey)
-    }
-})
+//const events = {
+//    '2022': {
+//        'СВО': '24 февраля Россия вероломно напала на УКраину.',
+//        'Смерть Елизаветы': '8 сентября на 97 году жизни скончалась королева Велткобритании ЕлизаветаII',
+//        'Маск и Твиттер': 'В конце октября американский миллиардер Илон Маск закрыл сделку по приобретению Twitter, заплатив за нее 44 иллиарда долларов'
+//    },
+//    '2021': {
+//        'Реальный срок Навальному': 'Суд согласился с доводами ФСИН и заменил Навальному условный срок на реальные 2 года'
+//    }
+//}
+//
+//const inputNode = document.getElementById('input')
+//const table = document.getElementById('table')
+//
+//inputNode.addEventListener('keydown', event => {
+//    if (event.key === 'enter' && inputNode.value !== '2022') {
+//        const eventKey = document.createElement('td')
+//        const eventDescr = document.createElement('td')
+//        eventKey.textContent = events[2022]['СВО']
+//        table.appendChild(eventKey)
+//    }
+//})
