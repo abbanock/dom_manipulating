@@ -1,3 +1,4 @@
+/*
 body{
   margin: 0;
   padding: 0;
@@ -28,7 +29,9 @@ text-align: center;
     line-height: calc(17vmin - 3px);
     cursor: pointer;
 }
+*/
 
+/*
 .red {
     background-color: red;
 }
@@ -36,6 +39,7 @@ text-align: center;
 .green {
     background-color: green;
 }
+*/
 
 /*
 СТИЛИ ПОИСКОВИКА
