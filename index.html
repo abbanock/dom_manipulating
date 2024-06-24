@@ -26,7 +26,7 @@
    
 -->
 
-<!--
+    <!--
     
  <div id="wrapperBlock"></div>
 <div class="output"></div>
@@ -37,8 +37,8 @@
   <ul class="month">
   </ul>
 -->
-   
-<!--
+
+    <!--
    HTML ПОИСКОВИКА
     <div class="wrapper">
         <input type="text" class="search">
@@ -46,8 +46,8 @@
         <div class="result"></div>
     </div>
 -->
-<!--ПОИСК ИСТОРИЧЕСКИХ СОБЫТИЙ-->
-<!--
+    <!--ПОИСК ИСТОРИЧЕСКИХ СОБЫТИЙ-->
+    <!--
 <div id="parent">
 	<input id="input" placeholder="введите год и нажмите Enter">
 	<table id="table"></table>
@@ -55,7 +55,36 @@
 
 -->
 
-    <script src="main.js"></script>
-</body>
+    <!--HTML ДЛЯ САЙТА ГОРОСКОПА-->
+    <div class="wrapper">
+        <select name="sign" id="select" class='select'>
+            <option value="дева">Дева</option>
+            <option value="козерог">Козерог</option>
+            <option value="стрелец" class="strelets" name="sign">Стрелец</option>
+            <option value="лев" class="lev" name="sign">Лев</option>
+            <option value="рыбы" class="ryby" name="sign">Рыбы</option>
+            <option value="весы" class="vesy" name="sign">Весы</option>
+            <option value="близнецы" class="bliznetsy" name="sign">Близнецы</option>
+            <option value="овен" class="oven" name="sign">Овен</option>
+            <option value="рак" class="rak" name="sign">Рак</option>
+            <option value="водолей" class="vodoley" name="sign">Водолей</option>
+            <option value="скорпион" class="skorpion" name="sign">Скорпион</option>
+            <option value="телец" class="telets" name="sign">Телец</option>
+        </select>
+        <br>
+        <div class="day_radio">
+            <label for="tomorrow">
+                <input type="radio" class="day" id='yesterday' name='days' value='yesterday'>Вчера
+            </label>
+            <label for="today">
+                <input type="radio" class="day" id='today' name='days' value='today' checked>Сегодня
+            </label>
+            <label for="yesterday">
+                <input type="radio" class="day" id='tomorrow' value='tomorrow' name='days'>Завтра
+            </label>
+        </div>
+        <div class="output"></div>
+    </div>
 
-</html>
+    <script src="main.js"></script>
+</body></html>

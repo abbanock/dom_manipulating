@@ -153,3 +153,16 @@
 //        table.appendChild(eventKey)
 //    }
 //})
+
+const radio = document.querySelectorAll('.day')
+
+const select = document.querySelector('.select')
+
+window.addEventListener('click', () => {
+    let data = null;
+for (let i = 0; i < radio.length; i++) {
+    if (radio[i].checked) {
+        data = radio[i].value
+    }
+}
+})

@@ -1,9 +1,9 @@
-/*
 body{
   margin: 0;
   padding: 0;
   width:100%
 }
+/*
 #wrapperBlock{
   margin: 3px auto;
   padding: 0;
@@ -79,3 +79,22 @@ text-align: center;
 	text-align: center;
 	border: 1px solid black;
 }*/
+
+.wrapper {
+    width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+.day_radio {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.output {
+    width: 400px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
