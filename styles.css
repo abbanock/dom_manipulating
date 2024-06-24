@@ -80,6 +80,8 @@ text-align: center;
 	border: 1px solid black;
 }*/
 
+/*
+CSS ДЛЯ ГОРОСКОПА
 .wrapper {
     width: 600px;
     margin: 50px auto;
@@ -96,5 +98,30 @@ text-align: center;
     margin: 20px auto;
     border-radius: 10px;
     border: 1px solid black;
+}
+*/
+
+#parent {
+	text-align: center;
+}
+#parent > * {
+	margin-bottom: 10px;
+}
+
+#timer {
+	font-size: 18px;
+}
+#text {
+	font-size: 17px;
+	font-style: italic;
+}
+
+button {
+	padding: 5px 10px;
+	font-size: 15px;
+	cursor: pointer;
+}
+button:not(.active) {
+	display: none;
 }
 

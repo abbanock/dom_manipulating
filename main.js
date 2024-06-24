@@ -154,15 +154,58 @@
 //    }
 //})
 
-const radio = document.querySelectorAll('.day')
+//JS ДЛЯ ГОРОСКОПА
+//const radio = document.querySelectorAll('.day')
+//const select = document.querySelector('.select')
+//
+//window.addEventListener('click', () => {
+//    let data = null;
+//for (let i = 0; i < radio.length; i++) {
+//    if (radio[i].checked) {
+//        data = radio[i].value
+//    }
+//}
+//})
+//
+//const signs = {
+//    
+//}
 
-const select = document.querySelector('.select')
+const startBtn = document.querySelector('#start')
+const timer = document.querySelector('#timer')
+const stopBtn = document.querySelector('#stop')
+const container = document.querySelector('#parent')
 
-window.addEventListener('click', () => {
-    let data = null;
-for (let i = 0; i < radio.length; i++) {
-    if (radio[i].checked) {
-        data = radio[i].value
-    }
+const wishes = {
+    0: 'хуй за щеку получишь скоро',
+    1: 'За твоей дверью уже стоит счастье',
+    2: 'Внимательно следи за своим здоровьем',
+    3: 'Интуиция не подведет тебя в этом году',
+    4: 'Совсем скоро ты встретишь интересного человека',
+    5: 'Твоя будущая любовь ждет своего часа',
+    6: 'Повезет в денежных вопросаx',
+    7: 'Будешь много плакать, но только от радости',
+    8: 'Тебя ожидает интересная поездка',
+    9: 'В любом начинании будет преследовать удача',
 }
+
+start.addEventListener('click', () => {
+
+    let randomizer = setInterval(() => {
+        let number = Math.floor(Math.random() * 10)
+        timer.textContent = number
+    }, 100)
+
+    startBtn.classList.remove('active')
+    stopBtn.classList.add('active')
+    
+    stopBtn.addEventListener('click', () => {
+    clearInterval(randomizer)
+    stopBtn.classList.remove('active')
+    const output = document.createElement('div')
+    output.textContent = wishes[timer.textContent]
+    container.appendChild(output)
 })
+})
+
+
