@@ -128,6 +128,7 @@ button:not(.active) {
 }
 */
 
+/*
 CSS АВТОДОПОЛНЕНИЯ
 #parent {
 	position: relative;
@@ -152,5 +153,10 @@ CSS АВТОДОПОЛНЕНИЯ
 #parent li:hover {
 	border: 1px solid black;
 	cursor: pointer;
+}
+*/
+
+.spoiler:not(.active) {
+	display: none;
 }
 
