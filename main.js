@@ -483,14 +483,25 @@
 //    })
 //})
 
-const link = document.querySelector('.toggle')
-const spoiler = document.querySelector('.spoiler')
+////СПОЙЛЕРЫ
+//const link = document.querySelector('.toggle')
+//const spoiler = document.querySelector('.spoiler')
+//
+////ПО КЛИКУ НА ССЫЛКУ МЫ НАКИДЫВАЕМ ТОГГЛ НА СПОЙЛЕР ВКЛЮЧАЯ И ОТКЛЮЯЧАЯ ЕГО
+//link.addEventListener('click', () => {
+//    spoiler.classList.toggle('active')
+//})
 
-link.addEventListener('click', () => {
-    spoiler.classList.toggle('active')
-})
+const btns = document.querySelectorAll('a')
+const tabs = document.querySelectorAll('tab')
 
+for (let i = 0; i < btns.length; i++) {
 
-
-
-
+    btns[i].addEventListener('click', e => {
+            console.log(btns)
+            Array.from(btns).forEach(link => {
+                    if (link.classList.contains('active')) link.classList.remove('active')
+                }
+                btns[i].classList.add('active')
+            })
+    }
