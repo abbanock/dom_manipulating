@@ -492,16 +492,37 @@
 //    spoiler.classList.toggle('active')
 //})
 
-const btns = document.querySelectorAll('a')
-const tabs = document.querySelectorAll('tab')
+//JS ВКЛАДОК
+//const btns = document.querySelectorAll('a')
+//const tabs = document.querySelectorAll('tab')
+//
+//for (let i = 0; i < btns.length; i++) {
+//
+//    btns[i].addEventListener('click', e => {
+//            console.log(btns)
+//            Array.from(btns).forEach(link => {
+//                    if (link.classList.contains('active')) link.classList.remove('active')
+//                }
+//                btns[i].classList.add('active')
+//            })
+//    }
+////НЕ ДОДЕЛАЛ
 
-for (let i = 0; i < btns.length; i++) {
+//ИГРА В ГОРОДА
+let field = document.querySelector('#field');
+let message = document.querySelector('#message');
+const btn = document.querySelector('.button');
+let townsArray = []
 
-    btns[i].addEventListener('click', e => {
-            console.log(btns)
-            Array.from(btns).forEach(link => {
-                    if (link.classList.contains('active')) link.classList.remove('active')
-                }
-                btns[i].classList.add('active')
-            })
+btn.addEventListener('click', event => {
+    let town = field.value;
+
+    if (townsArray.includes(town.toUpperCase())) {
+        message.textContent = "Такой город уже был"
+    } else {
+        townsArray.push(town.toUpperCase())
+        console.log(townsArray)
+        message.textContent = `Назван город ${town}. Вам нужно назвать город на букву ${town[town.length - 1].toUpperCase()}`
+        field.value = ''
     }
+})
