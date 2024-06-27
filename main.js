@@ -509,20 +509,20 @@
 ////НЕ ДОДЕЛАЛ
 
 //ИГРА В ГОРОДА
-let field = document.querySelector('#field');
-let message = document.querySelector('#message');
-const btn = document.querySelector('.button');
-let townsArray = []
-
-btn.addEventListener('click', event => {
-    let town = field.value;
-
-    if (townsArray.includes(town.toUpperCase())) {
-        message.textContent = "Такой город уже был"
-    } else {
-        townsArray.push(town.toUpperCase())
-        console.log(townsArray)
-        message.textContent = `Назван город ${town}. Вам нужно назвать город на букву ${town[town.length - 1].toUpperCase()}`
-        field.value = ''
-    }
-})
+//let field = document.querySelector('#field');
+//let message = document.querySelector('#message');
+//const btn = document.querySelector('.button');
+//let townsArray = []
+//
+//btn.addEventListener('click', event => {
+//    let town = field.value;
+//
+//    if (townsArray.includes(town.toUpperCase())) {
+//        message.textContent = "Такой город уже был"
+//    } else {
+//        townsArray.push(town.toUpperCase())
+//        console.log(townsArray)
+//        message.textContent = `Назван город ${town}. Вам нужно назвать город на букву ${town[town.length - 1].toUpperCase()}`
+//        field.value = ''
+//    }
+//})
