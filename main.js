@@ -513,22 +513,52 @@ let field = document.querySelector('#field');
 let message = document.querySelector('#message');
 const btn = document.querySelector('.button');
 let townsArray = [];
+const townsCpuList = ['Архангельск', 'Антананариву', 'Борисов', "Бруней", "Верхние Луховицы", "Иллинойс", "Иристон", "Кейптаун", "Киото"]
 let lastChar = '';
 let town = '';
-
-btn.addEventListener('click', event => {
-    let town = field.value;
-    if (field.value[0].toLowerCase() !== lastChar && townsArray.length > 0) {
-        message.textContent = `Ваш город должен начинаться с буквы "${lastChar}"`
-        field.value = ''
-    } else if (townsArray.includes(town.toUpperCase())) {
-        message.textContent = "Такой город уже был"
-    } else {
-        townsArray.push(town.toUpperCase())
-        console.log(townsArray, field.value[0], town, lastChar)
-        message.textContent = `Назван город ${town}. Вам нужно назвать город на букву ${town[town.length - 1].toUpperCase()}`
-        field.value = ''
-        lastChar = town[town.length - 1]
+let players = [
+    {
+        name: 'user'
+    },
+    {
+        name: 'CPU'
     }
-    
+]
+function cpuMove() {
+    let list = townsCpuList.filter(city => city.startsWith(`${lastChar.toUpperCase()}`) && !townsArray.includes(city.toUpperCase()))
+    let answer = list[Math.floor(Math.random() * list.length)]
+    message.textContent = answer;
+    townsArray.push(answer.toUpperCase())
+    lastChar = answer[answer.length - 1]
+    console.log(townsArray)
+}
+//ИГРА ДВУХ ИГРОКОВ
+//btn.addEventListener('click', event => {
+//    let town = field.value;
+//    if (town[0].toLowerCase() !== lastChar && townsArray.length > 0) {
+//        message.textContent = `Ваш город должен начинаться с буквы "${lastChar}"`
+//        field.value = ''
+//    } else if (townsArray.includes(town.toUpperCase())) {
+//        message.textContent = "Такой город уже был"
+//    } else {
+//        townsArray.push(town.toUpperCase())
+//        message.textContent = `Назван город ${town}. Вам нужно назвать город на букву ${town[town.length - 1].toUpperCase()}`
+//        field.value = ''
+//        lastChar = town[town.length - 1]
+//    }
+//
+//})
+
+//ИГРА С КОМПОМ
+btn.addEventListener('click', () => {
+town = field.value
+if (townsArray.includes(town.toUpperCase())) {
+    message.textContent = "Такой город уже был"
+} else {
+    townsArray.push(town.toUpperCase())
+    field.value = ''
+    lastChar = town[town.length - 1]
+    console.log(lastChar)
+}
+    cpuMove()
 })
