@@ -509,56 +509,87 @@
 ////НЕ ДОДЕЛАЛ
 
 //ИГРА В ГОРОДА
-let field = document.querySelector('#field');
-let message = document.querySelector('#message');
-const btn = document.querySelector('.button');
-let townsArray = [];
-const townsCpuList = ['Архангельск', 'Антананариву', 'Борисов', "Бруней", "Верхние Луховицы", "Иллинойс", "Иристон", "Кейптаун", "Киото"]
-let lastChar = '';
-let town = '';
-let players = [
-    {
-        name: 'user'
-    },
-    {
-        name: 'CPU'
-    }
-]
-function cpuMove() {
-    let list = townsCpuList.filter(city => city.startsWith(`${lastChar.toUpperCase()}`) && !townsArray.includes(city.toUpperCase()))
-    let answer = list[Math.floor(Math.random() * list.length)]
-    message.textContent = answer;
-    townsArray.push(answer.toUpperCase())
-    lastChar = answer[answer.length - 1]
-    console.log(townsArray)
-}
-//ИГРА ДВУХ ИГРОКОВ
-//btn.addEventListener('click', event => {
-//    let town = field.value;
-//    if (town[0].toLowerCase() !== lastChar && townsArray.length > 0) {
-//        message.textContent = `Ваш город должен начинаться с буквы "${lastChar}"`
-//        field.value = ''
-//    } else if (townsArray.includes(town.toUpperCase())) {
-//        message.textContent = "Такой город уже был"
-//    } else {
-//        townsArray.push(town.toUpperCase())
-//        message.textContent = `Назван город ${town}. Вам нужно назвать город на букву ${town[town.length - 1].toUpperCase()}`
-//        field.value = ''
-//        lastChar = town[town.length - 1]
+//let field = document.querySelector('#field');
+//let message = document.querySelector('#message');
+//const btn = document.querySelector('.button');
+//let townsArray = [];
+//const townsCpuList = ['Архангельск', 'Антананариву', 'Борисов', "Бруней", "Верхние Луховицы", "Иллинойс", "Иристон", "Кейптаун", "Киото"]
+//let lastChar = '';
+//let town = '';
+//let players = [
+//    {
+//        name: 'user'
+//    },
+//    {
+//        name: 'CPU'
 //    }
+//]
+////ДОРАБОТАТЬ ФУНКЦИЮ ОТВЕТА КОМПА
+//function cpuMove() {
+//    let list = townsCpuList.filter(city => city.startsWith(`${lastChar.toUpperCase()}`) && !townsArray.includes(city.toUpperCase()))
+//    let answer = list[Math.floor(Math.random() * list.length)]
+//    message.textContent = answer;
+//    townsArray.push(answer.toUpperCase())
+//    lastChar = answer[answer.length - 1]
+//    console.log(townsArray)
+//}
+////ИГРА ДВУХ ИГРОКОВ
+////btn.addEventListener('click', event => {
+////    let town = field.value;
+////    if (town[0].toLowerCase() !== lastChar && townsArray.length > 0) {
+////        message.textContent = `Ваш город должен начинаться с буквы "${lastChar}"`
+////        field.value = ''
+////    } else if (townsArray.includes(town.toUpperCase())) {
+////        message.textContent = "Такой город уже был"
+////    } else {
+////        townsArray.push(town.toUpperCase())
+////        message.textContent = `Назван город ${town}. Вам нужно назвать город на букву ${town[town.length - 1].toUpperCase()}`
+////        field.value = ''
+////        lastChar = town[town.length - 1]
+////    }
+////
+////})
 //
+////ИГРА С КОМПОМ
+////ДОРАБОТАТЬ ОТВЕТ ПОЛЬЗОВАТЕЛЯ НА ПРЕДМЕТ ПОВТОРЕНИЯ И СОВПАДЕНИЯ ПЕРВОЙ БУКВЫ ОТВЕТА С ПОСЛЕДНЕЙ БУКВОЙ,
+//btn.addEventListener('click', () => {
+//town = field.value
+//if (townsArray.includes(town.toUpperCase())) {
+//    message.textContent = "Такой город уже был"
+//} else {
+//    townsArray.push(town.toUpperCase())
+//    field.value = ''
+//    lastChar = town[town.length - 1]
+//    console.log(lastChar)
+//}
+//    cpuMove()
 //})
 
-//ИГРА С КОМПОМ
-btn.addEventListener('click', () => {
-town = field.value
-if (townsArray.includes(town.toUpperCase())) {
-    message.textContent = "Такой город уже был"
-} else {
-    townsArray.push(town.toUpperCase())
-    field.value = ''
-    lastChar = town[town.length - 1]
-    console.log(lastChar)
+//ЧЕКЛИСТ
+
+const input = document.querySelector('#input');
+const list = document.querySelector('#list');
+
+function addButtons(el) {
+    let doneBtn = document.createElement('button');
+    doneBtn.textContent = "Сделано";
+    
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "Удалить";
+    el.appendChild(doneBtn)
+    el.appendChild(deleteBtn)
 }
-    cpuMove()
-})
+
+input.addEventListener('keypress', function(event) {
+	if (event.key == 'Enter') {
+		let li = document.createElement('li')
+        li.textContent = input.value;
+        addButtons(li);
+        list.appendChild(li)
+	}
+});
+
+list.addEventListener('click', event => {
+        console.log(event.target, li)
+        event.stopPropagation()
+    })
