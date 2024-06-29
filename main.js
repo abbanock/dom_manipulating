@@ -586,10 +586,19 @@ input.addEventListener('keypress', function(event) {
         li.textContent = input.value;
         addButtons(li);
         list.appendChild(li)
+        
+        input.value = ''
 	}
 });
 
 list.addEventListener('click', event => {
-        console.log(event.target, li)
-        event.stopPropagation()
+    if (event.target.textContent === "Удалить") {
+        let li = event.target.parentElement;
+        list.removeChild(li)
+    }
+    
+    if (event.target.textContent === "Сделано") {
+        let li = event.target.parentElement;
+        li.style.textDecoration = 'line-through'
+    }
     })
