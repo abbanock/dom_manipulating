@@ -567,38 +567,86 @@
 
 //ЧЕКЛИСТ
 
-const input = document.querySelector('#input');
-const list = document.querySelector('#list');
+//const input = document.querySelector('#input');
+//const list = document.querySelector('#list');
+//
+//function addButtons(el) {
+//    let doneBtn = document.createElement('button');
+//    doneBtn.textContent = "Сделано";
+//    
+//    let deleteBtn = document.createElement('button');
+//    deleteBtn.textContent = "Удалить";
+//    el.appendChild(doneBtn)
+//    el.appendChild(deleteBtn)
+//}
+//
+//input.addEventListener('keypress', function(event) {
+//	if (event.key == 'Enter') {
+//		let li = document.createElement('li')
+//        li.textContent = input.value;
+//        addButtons(li);
+//        list.appendChild(li)
+//        
+//        input.value = ''
+//	}
+//});
+//
+//list.addEventListener('click', event => {
+//    if (event.target.textContent === "Удалить") {
+//        let li = event.target.parentElement;
+//        list.removeChild(li)
+//    }
+//    
+//    if (event.target.textContent === "Сделано") {
+//        let li = event.target.parentElement;
+//        li.style.textDecoration = 'line-through'
+//    }
+//    })
 
-function addButtons(el) {
-    let doneBtn = document.createElement('button');
-    doneBtn.textContent = "Сделано";
-    
-    let deleteBtn = document.createElement('button');
-    deleteBtn.textContent = "Удалить";
-    el.appendChild(doneBtn)
-    el.appendChild(deleteBtn)
+//КАЛЬКУЛЯТОР ТОВАРОВ
+
+const NAME = document.querySelector('.name')
+const PRICE = document.querySelector('.price')
+const AMOUNT = document.querySelector('.amount')
+const btn = document.querySelector('.add')
+const TABLE = document.querySelector('#itemsTable')
+let array = []
+
+function addRow(tab, arr) {
+    let row = document.createElement('tr')
+
+    for (let i = 0; i < 5; i++) {
+        let tableCell = document.createElement('td');
+        
+        if (i == 3) {
+            tableCell.textContent = arr[1] * arr[2];
+        } else if (i == 4) {
+            tableCell.textContent = "Удалить"
+            tableCell.style.textDecoration = "underline"
+            tableCell.style.color = "blue"
+            tableCell.style.cursor = "pointer"
+        } else tableCell.textContent = arr[i];
+        
+        row.appendChild(tableCell)
+    }
+    array = []
+    tab.appendChild(row)
 }
 
-input.addEventListener('keypress', function(event) {
-	if (event.key == 'Enter') {
-		let li = document.createElement('li')
-        li.textContent = input.value;
-        addButtons(li);
-        list.appendChild(li)
-        
-        input.value = ''
-	}
-});
-
-list.addEventListener('click', event => {
-    if (event.target.textContent === "Удалить") {
-        let li = event.target.parentElement;
-        list.removeChild(li)
+btn.addEventListener('click', () => {
+    if (NAME.value !== '') {
+        array.push(NAME.value, PRICE.value, AMOUNT.value)
     }
     
-    if (event.target.textContent === "Сделано") {
-        let li = event.target.parentElement;
-        li.style.textDecoration = 'line-through'
+    addRow(TABLE, array);
+    NAME.value = ''
+    PRICE.value = ''
+    AMOUNT.value = ''
+})
+
+TABLE.addEventListener('click', e => {
+    if (e.target.textContent == "Удалить") {
+        let el = e.target.parentElement;
+        TABLE.removeChild(el)
     }
-    })
+})

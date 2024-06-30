@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
     <!--
@@ -154,9 +153,34 @@
 
     <!--    ЧЕКЛИСТ-->
 
+<!--
     <input id="input"> <br>
     <ul id="list"></ul>
-
+-->
+  
+  <div id="form">
+      <input type="text" placeholder="название" class="name">
+      <input type="text" placeholder="цена" class="price">
+      <input type="text" placeholder="количество" class="amount">
+      <button class="add">Добавить</button>
+  </div>
+   <h1>Таблица продуктов:</h1>
+   <table>
+       <thead>
+           <tr>
+               <th>Название</th>
+               <th>Цена</th>
+               <th>Количество</th>
+               <th>Сумма</th>
+               <th>Удалить</th>
+           </tr>
+       </thead>
+       <tbody id="itemsTable">
+    
+       </tbody>
+       <span class="result"></span>
+       
+   </table>
     <script src="main.js">
     </script>
 </body>
