@@ -620,6 +620,7 @@ function addRow(tab, arr) {
         
         if (i == 3) {
             tableCell.textContent = arr[1] * arr[2];
+            tableCell.classList.add('cost')
         } else if (i == 4) {
             tableCell.textContent = "Удалить"
             tableCell.style.textDecoration = "underline"
@@ -633,12 +634,18 @@ function addRow(tab, arr) {
     tab.appendChild(row)
 }
 
+function costSum() {
+    let costs = document.getElementsByClassName('cost')
+    console.log(costs)
+}
+
 btn.addEventListener('click', () => {
     if (NAME.value !== '') {
         array.push(NAME.value, PRICE.value, AMOUNT.value)
     }
     
     addRow(TABLE, array);
+   costSum()
     NAME.value = ''
     PRICE.value = ''
     AMOUNT.value = ''
