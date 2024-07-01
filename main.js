@@ -603,57 +603,75 @@
 //    }
 //    })
 
-//КАЛЬКУЛЯТОР ТОВАРОВ
+////КАЛЬКУЛЯТОР ТОВАРОВ
+//
+//const NAME = document.querySelector('.name')
+//const PRICE = document.querySelector('.price')
+//const AMOUNT = document.querySelector('.amount')
+//const btn = document.querySelector('.add')
+//const TABLE = document.querySelector('#itemsTable')
+//let array = []
+//
+////ДОБАВЛЕНИЕ СТРОЧКИ С ИНФОЙ ПРОДУКТА
+//function addRow(tab, arr) {
+//    let row = document.createElement('tr')
+//
+//    for (let i = 0; i < 5; i++) {
+//        let tableCell = document.createElement('td');
+//        
+//        if (i == 3) {
+//            tableCell.textContent = arr[1] * arr[2];
+//            tableCell.classList.add('cost')
+//        } else if (i == 4) {
+//            tableCell.textContent = "Удалить"
+//            tableCell.style.textDecoration = "underline"
+//            tableCell.style.color = "blue"
+//            tableCell.style.cursor = "pointer"
+//        } else tableCell.textContent = arr[i];
+//        
+//        row.appendChild(tableCell)
+//    }
+//    array = []
+//    tab.appendChild(row)
+//}
+//
+////НЕРЕАЛИЗОВАННАЯ ФУНКЦИЯ ПОДСЧЕТА СУММЫ ТОВАРОВ
+//function costSum() {
+//    let costs = document.getElementsByClassName('cost')
+//    console.log(costs)
+//}
+////ОБРАБОТЧИК ПО НАЖАТИЮ КНОПКИ
+//btn.addEventListener('click', () => {
+//    if (NAME.value !== '') {
+//        array.push(NAME.value, PRICE.value, AMOUNT.value)
+//    }
+//    
+//    addRow(TABLE, array);
+//   costSum()
+//    NAME.value = ''
+//    PRICE.value = ''
+//    AMOUNT.value = ''
+//})
+//
+////ОБРАБОТЧИК ПО НАЖАТИЮ КНОПКИ УДАЛИТЬ
+//TABLE.addEventListener('click', e => {
+//    if (e.target.textContent == "Удалить") {
+//        let el = e.target.parentElement;
+//        TABLE.removeChild(el)
+//    }
+//})
 
-const NAME = document.querySelector('.name')
-const PRICE = document.querySelector('.price')
-const AMOUNT = document.querySelector('.amount')
-const btn = document.querySelector('.add')
-const TABLE = document.querySelector('#itemsTable')
-let array = []
+//const INPUT_FIRST = document.querySelector('.quest1')
+//const INPUT_SECOND = document.querySelector('.quest2')
+//const INPUT_THIRD = document.querySelector('.quest3')
 
-function addRow(tab, arr) {
-    let row = document.createElement('tr')
+let answersArray = ['Жираф', 'Кожа', 'Бразилия']
+const userAnswers = document.getElementsByTagName('input')
+const btn = document.querySelector('.check')
 
-    for (let i = 0; i < 5; i++) {
-        let tableCell = document.createElement('td');
-        
-        if (i == 3) {
-            tableCell.textContent = arr[1] * arr[2];
-            tableCell.classList.add('cost')
-        } else if (i == 4) {
-            tableCell.textContent = "Удалить"
-            tableCell.style.textDecoration = "underline"
-            tableCell.style.color = "blue"
-            tableCell.style.cursor = "pointer"
-        } else tableCell.textContent = arr[i];
-        
-        row.appendChild(tableCell)
-    }
-    array = []
-    tab.appendChild(row)
-}
-
-function costSum() {
-    let costs = document.getElementsByClassName('cost')
-    console.log(costs)
-}
-
-btn.addEventListener('click', () => {
-    if (NAME.value !== '') {
-        array.push(NAME.value, PRICE.value, AMOUNT.value)
-    }
-    
-    addRow(TABLE, array);
-   costSum()
-    NAME.value = ''
-    PRICE.value = ''
-    AMOUNT.value = ''
-})
-
-TABLE.addEventListener('click', e => {
-    if (e.target.textContent == "Удалить") {
-        let el = e.target.parentElement;
-        TABLE.removeChild(el)
-    }
+btn.addEventListener('click', e => {
+    Array.from(userAnswers).forEach((item, idx) => {
+        if (item.value ===  answersArray[idx]) item.classList.add('right')
+        else item.classList.add('wrong')
+    })
 })

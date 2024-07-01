@@ -210,6 +210,8 @@ body {
 }
 */
 
+/*
+CSS КАЛЬКУЛЯТОРА ТОВАРОВ
 #form {
     width: 60%;
     text-align: center;
@@ -243,4 +245,16 @@ th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
+}
+*/
+.right {
+    border: 3px solid green;
+}
+
+.wrong {
+    border: 3px solid red;
+}
+
+.check {
+    margin-top: 10px;
 }
