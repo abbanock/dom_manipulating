@@ -665,13 +665,16 @@
 //const INPUT_SECOND = document.querySelector('.quest2')
 //const INPUT_THIRD = document.querySelector('.quest3')
 
-let answersArray = ['Жираф', 'Кожа', 'Бразилия']
-const userAnswers = document.getElementsByTagName('input')
-const btn = document.querySelector('.check')
-
-btn.addEventListener('click', e => {
-    Array.from(userAnswers).forEach((item, idx) => {
-        if (item.value ===  answersArray[idx]) item.classList.add('right')
-        else item.classList.add('wrong')
-    })
-})
+////ВИКТОРИНА
+//let answersArray = ['Жираф', 'Кожа', 'Бразилия']
+//const userAnswers = document.getElementsByTagName('input')
+//const btn = document.querySelector('.check')
+//
+//btn.addEventListener('click', e => {
+//    Array.from(userAnswers).forEach((item, idx) => {
+//        item.classList.remove('wrong')
+//        item.classList.remove('right')
+//        if (item.value ===  answersArray[idx]) item.classList.add('right')
+//        else item.classList.add('wrong')
+//    })
+//})
