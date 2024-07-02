@@ -678,3 +678,21 @@
 //        else item.classList.add('wrong')
 //    })
 //})
+
+//СЛАЙДЕР
+//const LEFT = document.querySelector('#left');
+//const RIGHT = document.querySelector('#right');
+//const IMG = document.querySelector('#slider')
+//
+//let i = 0
+//const CLUBS = ['img1.jpeg', 'img2.jpeg', 'img3.jpeg'];
+//
+//RIGHT.addEventListener('click', e => {
+//    i = (i + 1) % CLUBS.length;
+//    IMG.setAttribute('src', `imgs/${CLUBS[i]}`) 
+//})
+//
+//LEFT.addEventListener('click', e => {
+//    i = (i - 1 + CLUBS.length) % CLUBS.length;
+//    IMG.setAttribute('src', `imgs/${CLUBS[i]}`) 
+//})
