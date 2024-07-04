@@ -699,4 +699,12 @@
 
 //КРЕСТИКИ НОЛИКИ
 
+function start(cells) {
+    cells.forEach(item => {
+        item.addEventListener('click', () => {
+            item.textContent = 'X'
+        })
+    })
 let cells = document.querySelectorAll('#field td');
+
+start(cells);
