@@ -696,3 +696,7 @@
 //    i = (i - 1 + CLUBS.length) % CLUBS.length;
 //    IMG.setAttribute('src', `imgs/${CLUBS[i]}`) 
 //})
+
+//КРЕСТИКИ НОЛИКИ
+
+let cells = document.querySelectorAll('#field td');
