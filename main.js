@@ -711,3 +711,12 @@ function start(x) {
     })
 }
 start(cells);
+
+function start(x) {
+    cells.forEach(item => {
+        item.addEventListener('click', (e) => {
+            console.log(e.target)
+        })
+    })
+}
+start(cells);
