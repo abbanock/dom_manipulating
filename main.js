@@ -700,23 +700,42 @@
 //КРЕСТИКИ НОЛИКИ
 
 
+//
+//let cells = document.querySelectorAll('#field td');
+//
+//function start(x) {
+//    cells.forEach(item => {
+//        item.addEventListener('click', (e) => {
+//            console.log(e.target)
+//        })
+//    })
+//}
+//start(cells);
+//
+//function start(x) {
+//    cells.forEach(item => {
+//        item.addEventListener('click', (e) => {
+//            console.log(e.target)
+//        })
+//    })
+//}
+//start(cells);
 
-let cells = document.querySelectorAll('#field td');
+//ЦВЕТА
 
-function start(x) {
-    cells.forEach(item => {
-        item.addEventListener('click', (e) => {
-            console.log(e.target)
-        })
-    })
+let rows = 3;
+let cols = 3;
+
+const field = document.querySelector('#field')
+
+function addCells(r, c) {
+    for (let i = 1; i <= r; i++ ) {
+        let tableRow = document.createElement('tr')
+        field.appendChild(tableRow)
+        for (let j = 1; j <= c; j++ ) {
+            tableRow.appendChild('td')
+        }
 }
-start(cells);
+} 
 
-function start(x) {
-    cells.forEach(item => {
-        item.addEventListener('click', (e) => {
-            console.log(e.target)
-        })
-    })
-}
-start(cells);
+addCells(rows, cols)
