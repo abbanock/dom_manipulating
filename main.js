@@ -729,13 +729,13 @@ let cols = 3;
 const field = document.querySelector('#field')
 
 function addCells(r, c) {
-    for (let i = 1; i <= r; i++ ) {
+    for (let i = 1; i <= r; i++) {
         let tableRow = document.createElement('tr')
         field.appendChild(tableRow)
-        for (let j = 1; j <= c; j++ ) {
-            tableRow.appendChild('td')
+        for (let j = 1; j <= c; j++) {
+    tableRow.appendChild(document.createElement('td'))
         }
+    }
 }
-} 
 
 addCells(rows, cols)
