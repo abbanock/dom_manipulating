@@ -725,12 +725,17 @@
 
 let rows = 3;
 let cols = 7;
-let colors = ['red', 'green', 'blue'];
+let colors = ['red', 'green', 'blue', 'purple', 'yellow', 'orange'];
 
 const field = document.querySelector('#field')
 
 function pickRandomColor(array) {
-    return array[Math.floor(Math.random() * 3)]
+    return array[Math.floor(Math.random() * 6)]
+}
+
+function colorChanger(array, clr) {
+    let idx = ( array.indexOf(clr) + 1 ) % array.length
+    return array[idx]
 }
 
 function addCells(r, c) {
@@ -747,3 +752,10 @@ function addCells(r, c) {
 
 addCells(rows, cols)
 console.log(pickRandomColor(colors))
+
+field.addEventListener('click', e => {
+    let cell = e.target;
+    let cellClr = cell.classList.value;
+    
+    cell.classList.add(colorChanger(colors, cellClr))
+})
