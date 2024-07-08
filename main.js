@@ -724,18 +724,26 @@
 //ЦВЕТА
 
 let rows = 3;
-let cols = 3;
+let cols = 7;
+let colors = ['red', 'green', 'blue'];
 
 const field = document.querySelector('#field')
+
+function pickRandomColor(array) {
+    return array[Math.floor(Math.random() * 3)]
+}
 
 function addCells(r, c) {
     for (let i = 1; i <= r; i++) {
         let tableRow = document.createElement('tr')
         field.appendChild(tableRow)
         for (let j = 1; j <= c; j++) {
-    tableRow.appendChild(document.createElement('td'))
+            let tableCol = document.createElement('td')
+            tableCol.classList.add(pickRandomColor(colors))
+            tableRow.appendChild(tableCol)
         }
     }
 }
 
 addCells(rows, cols)
+console.log(pickRandomColor(colors))

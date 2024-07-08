@@ -281,5 +281,15 @@ CSS ВИКТОРИНА
 	text-align: center;
 	font-weight: bold;
 }
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
 
 
