@@ -764,8 +764,13 @@ field.addEventListener('click', e => {
         timer.textContent = counter
     }, 1000)
     }
+    
+    let tds = document.querySelectorAll('td')
     let cell = e.target;
     let cellClr = cell.classList.value;
+    console.log(cellClr)
     
     cell.className = colorChanger(colors, cellClr)
+    console.log(Array.from(tds))
+    console.log(Array.from(tds).some(item => item == 'td.purple'))
 })
