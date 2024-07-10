@@ -727,7 +727,8 @@ let rows = 3;
 let cols = 7;
 let colors = ['red', 'green', 'blue', 'purple', 'yellow', 'orange'];
 let timer = document.querySelector('#timer')
-let counter = 0
+let counter = 0;
+let game = false;
 
 const field = document.querySelector('#field')
 
@@ -756,10 +757,13 @@ addCells(rows, cols)
 console.log(pickRandomColor(colors))
 
 field.addEventListener('click', e => {
-    setInterval(() => {
+    if (!game) {
+        setInterval(() => {
+        game = true;
         counter++;
         timer.textContent = counter
     }, 1000)
+    }
     let cell = e.target;
     let cellClr = cell.classList.value;
     
