@@ -771,6 +771,6 @@ field.addEventListener('click', e => {
     console.log(cellClr)
     
     cell.className = colorChanger(colors, cellClr)
-    console.log(Array.from(tds))
-    console.log(Array.from(tds).some(item => item == 'td.purple'))
+    
+    console.log(tds)
 })
