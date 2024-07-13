@@ -768,9 +768,16 @@ field.addEventListener('click', e => {
     let tds = document.querySelectorAll('td')
     let cell = e.target;
     let cellClr = cell.classList.value;
-    console.log(cellClr)
     
     cell.className = colorChanger(colors, cellClr)
+    console.log(cell.className)
     
-    console.log(tds)
+    nodeArray = Array.from(tds)
+    
+    
+    
+    if (nodeArray.every(node => node.classList.contains(`${cell.ClassName}`))) {
+        alert('Ты победил, тамик! Твое время `${counter}` cекунд')
+        alert('молодец')
+    }
 })
