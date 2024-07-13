@@ -754,7 +754,7 @@ function addCells(r, c) {
 }
 
 addCells(rows, cols)
-console.log(pickRandomColor(colors))
+
 
 field.addEventListener('click', e => {
     if (!game) {
@@ -770,7 +770,7 @@ field.addEventListener('click', e => {
     let cellClr = cell.classList.value;
     
     cell.className = colorChanger(colors, cellClr)
-    console.log(cell.className)
+    
     
     nodeArray = Array.from(tds)
     
