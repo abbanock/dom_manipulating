@@ -723,61 +723,62 @@
 
 //ЦВЕТА
 
-let rows = 3;
-let cols = 7;
-let colors = ['red', 'green', 'blue', 'purple', 'yellow', 'orange'];
-let timer = document.querySelector('#timer')
-let counter = 0;
-let game = false;
+//let rows = 3;
+//let cols = 7;
+//let colors = ['red', 'green', 'blue', 'purple', 'yellow', 'orange'];
+//let timer = document.querySelector('#timer')
+//let counter = 0;
+//let game = false;
+//
+//const field = document.querySelector('#field')
+//
+//function pickRandomColor(array) {
+//    return array[Math.floor(Math.random() * 6)]
+//}
+//
+//function colorChanger(array, clr) {
+//    let idx = ( array.indexOf(clr) + 1 ) % array.length
+//    return array[idx]
+//}
+//
+//function addCells(r, c) {
+//    for (let i = 1; i <= r; i++) {
+//        let tableRow = document.createElement('tr')
+//        field.appendChild(tableRow)
+//        for (let j = 1; j <= c; j++) {
+//            let tableCol = document.createElement('td')
+//            tableCol.classList.add(pickRandomColor(colors))
+//            tableRow.appendChild(tableCol)
+//        }
+//    }
+//}
+//
+//addCells(rows, cols)
+//
+//
+//field.addEventListener('click', e => {
+//    if (!game) {
+//        setInterval(() => {
+//        game = true;
+//        counter++;
+//        timer.textContent = counter
+//    }, 1000)
+//    }
+//    
+//    let tds = document.querySelectorAll('td')
+//    let cell = e.target;
+//    let cellClr = cell.classList.value;
+//    
+//    cell.className = colorChanger(colors, cellClr)
+//    
+//    
+//    nodeArray = Array.from(tds)
+//    
+//    
+//    
+//    if (nodeArray.every(node => node.classList.contains(`${cell.ClassName}`))) {
+//        alert('Ты победил, тамик! Твое время `${counter}` cекунд')
+//        alert('молодец')
+//    }
+//})
 
-const field = document.querySelector('#field')
-
-function pickRandomColor(array) {
-    return array[Math.floor(Math.random() * 6)]
-}
-
-function colorChanger(array, clr) {
-    let idx = ( array.indexOf(clr) + 1 ) % array.length
-    return array[idx]
-}
-
-function addCells(r, c) {
-    for (let i = 1; i <= r; i++) {
-        let tableRow = document.createElement('tr')
-        field.appendChild(tableRow)
-        for (let j = 1; j <= c; j++) {
-            let tableCol = document.createElement('td')
-            tableCol.classList.add(pickRandomColor(colors))
-            tableRow.appendChild(tableCol)
-        }
-    }
-}
-
-addCells(rows, cols)
-
-
-field.addEventListener('click', e => {
-    if (!game) {
-        setInterval(() => {
-        game = true;
-        counter++;
-        timer.textContent = counter
-    }, 1000)
-    }
-    
-    let tds = document.querySelectorAll('td')
-    let cell = e.target;
-    let cellClr = cell.classList.value;
-    
-    cell.className = colorChanger(colors, cellClr)
-    
-    
-    nodeArray = Array.from(tds)
-    
-    
-    
-    if (nodeArray.every(node => node.classList.contains(`${cell.ClassName}`))) {
-        alert('Ты победил, тамик! Твое время `${counter}` cекунд')
-        alert('молодец')
-    }
-})
